@@ -1,11 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1;
   font-weight: 400;
 }
 
+.body-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 html {
   font-size: 62.5%;
+}
+
+header {
+  display: flex;
+  flex-basis: 50px;
 }
 
 nav {
@@ -17,7 +34,43 @@ nav {
   font-size: 1.6rem;
 }
 
+nav h2 {
+  color: #DD3D55;
+}
+
 .middle-navLink {
   display: flex;
   gap: 10px;
+}
+
+main {
+  flex-grow: 1;
+  background-image: url('./assets/background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  background-color: rgba(0, 0, 0, .6);
+}
+
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section {
+  width: 40rem;
 }

@@ -1,6 +1,8 @@
+
+
 function HomePage() {
    return (
-      <>
+      <div className="body-container">
          <header>
             <nav>
                <h2>
@@ -32,7 +34,7 @@ function HomePage() {
                </div>
             </div>
          </main>
-      </>
+      </ div>
    )
 }
 
