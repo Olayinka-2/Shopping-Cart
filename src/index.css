@@ -40,7 +40,20 @@ nav h2 {
 
 .middle-navLink {
   display: flex;
-  gap: 10px;
+  gap: 1.2rem;
+}
+
+.middle-navLink .navLink {
+  text-decoration: none;
+  background-color: #fff;
+  padding: .7rem 1.6rem;
+  color: #DD3D55;
+  border-radius: 1rem;
+}
+
+.middle-navLink .active {
+  background-color: #DD3D55;
+  color: #fff;
 }
 
 main {

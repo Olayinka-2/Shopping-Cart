@@ -1,22 +1,9 @@
-
+import Header from "./Header";
 
 function HomePage() {
    return (
       <div className="body-container">
-         <header>
-            <nav>
-               <h2>
-                  Light Shop
-               </h2>
-               <div className="middle-navLink">
-                  <p>Home</p>
-                  <p>Shop</p>
-               </div>
-               <div className="right-navLink">
-                  <p>Cart</p>
-               </div>
-            </nav>
-         </header>
+         <Header />
          <main>
             <div className="hero-container">
                <div className="hero-section">
