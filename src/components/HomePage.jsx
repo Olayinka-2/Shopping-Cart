@@ -7,8 +7,8 @@ function HomePage() {
          <main>
             <div className="hero-container">
                <div className="hero-section">
-                  <p>Shoe fashion</p>
-                  <p>New Collection</p>
+                  <p className="hero-firstPara">Shoe fashion</p>
+                  <p className="hero-secondPara">New Collection</p>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto consequatur fugit dolor quaerat odio hic.</p>
                   <div className="hero-link">
                      <button>
