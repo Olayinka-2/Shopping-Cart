@@ -43,13 +43,12 @@ nav h2 {
   gap: 1.2rem;
 }
 
-.middle-navLink .navLink, .hero-link button {
+.middle-navLink .navLink {
   text-decoration: none;
   background-color: #fff;
   padding: .7rem 1.6rem;
   color: #DD3D55;
   border-radius: 1rem;
-  border: none;
 }
 
 .middle-navLink .active {
@@ -77,50 +76,14 @@ main::before {
   top: 0%;
   left: 0%;
   background-color: rgba(0, 0, 0, .6);
-  z-index: 1;
 }
 
 .hero-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
 }
 
 .hero-section {
   width: 40rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.hero-firstPara {
-  background-color: #DD3D55;
-  padding: .7rem 1.2rem;
-  font-size: 1.4rem;
-  text-transform: capitalize;
-  border-radius: .5rem;
-  font-weight: bold;
-  color: rgb(49, 48, 48);
-}
-
-.hero-secondPara {
-  font-size: 3.5rem;
-  word-spacing: 1rem;
-  letter-spacing: .5rem;
-  font-weight: 600;
-  color: #fff;
-}
-
-.hero-secondPara + p {
-  font-size: 1.4rem;
-  color: #fff;
-}
-
-.hero-link button{
-  padding: 1rem 1.8rem;
-  margin: 1rem;
-  border-radius: .3rem;
 }
