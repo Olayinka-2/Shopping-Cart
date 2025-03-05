@@ -70,3 +70,8 @@
    margin: 1rem;
    border-radius: .3rem;
 }
+
+.hero-link button:hover {
+  background-color: #DD3D55;
+  color: #fff;
+}

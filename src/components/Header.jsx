@@ -4,11 +4,10 @@ export default function Header() {
    const location = useLocation();
 
    const homeIsActive = location.pathname === '/' ? 'active' : '';
-   console.log(homeIsActive);
-   const shopIsActive = location.pathname === '/shopping' && 'active';
+   const shopIsActive = location.pathname === '/shopping' ? 'active' : '';
+   const cartIsActive = location.pathname === '/cart' ? 'active' : '';
 
    return (
-      <>
          <header>
             <nav>
                <h2>
@@ -17,16 +16,14 @@ export default function Header() {
                <div className="middle-navLink">
                   <Link to="/" className={`navLink ${homeIsActive}`}
                   >Home</Link>
-                  <Link to="shopping" className ={`navLink ${shopIsActive}`}
-                  style={{
-                     
-                  }}>Shop</Link>
+                  <Link to="/shop" className ={`navLink ${shopIsActive}`}>Shop</Link>
                </div>
                <div className="right-navLink">
-                  <p>Cart</p>
+                  <Link to="/cart">
+                     <button  className ={`${cartIsActive}`}>Cart</button>
+                  </Link>
                </div>
             </nav>
          </header>
-      </>
    )
 }

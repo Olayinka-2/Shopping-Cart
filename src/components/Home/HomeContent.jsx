@@ -1,4 +1,5 @@
 import style from './homeStyles.module.css';
+import { Link } from 'react-router-dom';
 
 export default function MainContent() {
    return (
@@ -10,12 +11,18 @@ export default function MainContent() {
                   <p className={style['hero-secondPara']}>New Collection</p>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto consequatur fugit dolor quaerat odio hic.</p>
                   <div className={style["hero-link"]}>
-                     <button>
-                        Shop Now
-                     </button>
-                     <button>
-                        Collection
-                     </button>
+                     
+                     <Link to="/shop">
+                        <button>
+                           Shop Now
+                        </button>
+                     </Link>
+                     <Link>
+                        <button>
+                           Collection
+                        </button>
+                     </Link>
+                     
                   </div>
                </div>
             </div>

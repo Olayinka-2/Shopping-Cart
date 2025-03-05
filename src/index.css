@@ -43,7 +43,7 @@ nav h2 {
   gap: 1.2rem;
 }
 
-.middle-navLink .navLink {
+.middle-navLink .navLink, .right-navLink button {
   text-decoration: none;
   background-color: #fff;
   padding: .7rem 1.6rem;
@@ -52,7 +52,8 @@ nav h2 {
   border: none;
 }
 
-.middle-navLink .active {
+
+.middle-navLink .active,.right-navLink .active {
   background-color: #DD3D55;
   color: #fff;
 }
