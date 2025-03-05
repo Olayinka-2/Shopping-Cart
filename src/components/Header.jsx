@@ -4,7 +4,7 @@ export default function Header() {
    const location = useLocation();
 
    const homeIsActive = location.pathname === '/' ? 'active' : '';
-   const shopIsActive = location.pathname === '/shopping' ? 'active' : '';
+   const shopIsActive = location.pathname === '/shop' ? 'active' : '';
    const cartIsActive = location.pathname === '/cart' ? 'active' : '';
 
    return (
