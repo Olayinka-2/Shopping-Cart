@@ -95,12 +95,18 @@ th, td {
 
 }
 
-.amount-con div {
+.amount-con button {
   border: 1px solid #4b3e40;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: .5rem;
+  padding: .65rem;
+  outline: none;
+}
+
+.amount-con button:not(button:nth-of-type(2)):active {
+  font-size: 1.5rem;
+  padding: .60rem;
 }
 
 .div2 {

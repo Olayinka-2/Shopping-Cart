@@ -3,7 +3,16 @@ import style from './shopContent.module.css';
 
 export default function ShopContent() {
    const [loading, setLoading] = useState(false);
-   const [data, setData] = useState([])
+   const [data, setData] = useState([]);
+
+
+
+   function handleAddToCart(product) {
+      setCartItem([
+         ...cartItem,
+         product
+      ])
+   }
 
    useEffect(() => {
       const fetchData = async () => {
@@ -26,7 +35,7 @@ export default function ShopContent() {
 
       fetchData();
    }, []);
-   console.log(data);
+
    return (
       <>
          <main>
@@ -37,7 +46,7 @@ export default function ShopContent() {
                <div className={style["product-container"]}>
                   <div className={style["products"]}>
                   {
-                     loading ? <div>Loading...</div> :
+                     loading ? <div className={style["loading-state"]}>Loading...</div> :
                      data.map((product) => (
                         <div className={style["product-card"]} key={product.id}>
                      <div className={style["product-image"]}>
@@ -47,7 +56,10 @@ export default function ShopContent() {
                         <p><span>Category:</span> {product.category}</p>
                         <p><span>Price:</span> {product.price}</p>
                         <p><span>Descriptions:</span> {product.title}</p>
-                        <button className={style["Add-to-cart-btn"]}>Add to Cart</button>
+                        <button 
+                        className={style["Add-to-cart-btn"]}
+                        onClick={() => handleAddToCart(product)}
+                        >Add to Cart</button>
                      </div>
                   </div>
                      ))

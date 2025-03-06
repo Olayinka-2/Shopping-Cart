@@ -1,6 +1,10 @@
+import { useLocation } from "react-router-dom"
 import Header from "./Header"
 
 export default function Cart() {
+   const location = useLocation();
+   let cartItem = location.state;
+
    return (
       <>
          <Header />
@@ -26,9 +30,9 @@ export default function Cart() {
                         <td>$469.99</td>
                         <td>
                            <div className="amount-con">
-                              <div className="div1">-</div>
-                              <div className="div2">0</div>
-                              <div className="div3">+</div>
+                              <button className="div1">-</button>
+                              <button className="div2">0</button>
+                              <button className="div3">+</button>
                            </div>
                         </td>
                         <td>$469.99</td>

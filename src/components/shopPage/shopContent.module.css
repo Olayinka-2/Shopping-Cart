@@ -66,3 +66,7 @@
       padding: .8rem 1.2rem;
       margin-top: auto;
    }
+
+   .loading-state {
+      font-size: 3rem;
+   }
