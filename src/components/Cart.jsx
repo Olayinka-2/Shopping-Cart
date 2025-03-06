@@ -1,7 +1,26 @@
 import { useOutletContext } from "react-router-dom";
 
 export default function Cart() {
-   const {cartItem} = useOutletContext();
+   const {cartItem, setCartItem} = useOutletContext();
+
+   function handleAddItem(product) {
+      const updatedCart = cartItem.map((item) =>
+         item.product.id === product.product.id
+           ? { ...item, quantity: item.quantity + 1 } // Update quantity
+           : item // Return unchanged item
+         );
+         setCartItem(updatedCart);
+   }
+   function handleSubtractItem(product) {
+      if(product.quantity > 0) {
+         const updatedCart = cartItem.map((item) =>
+            item.product.id === product.product.id
+              ? { ...item, quantity: item.quantity - 1 } // Update quantity
+              : item // Return unchanged item
+            );
+            setCartItem(updatedCart);
+      }
+   }
 
    return (
       <>
@@ -19,22 +38,29 @@ export default function Cart() {
                   <tbody>
                      {
                         cartItem.map((product) => (
-                     <tr key={product.id}>
+                     <tr key={product.product.id}>
                         <td>
                            <div className="table-desc">
-                              <p className="first-para">{product.title}</p>
+                              <p className="first-para">{product.product.title}</p>
                               <h3 className="second-para">Estimated Ship date: June 6th</h3>
                            </div>
                         </td>
-                        <td>{product.price}</td>
+                        <td>{product.product.price}</td>
                         <td>
                            <div className="amount-con">
-                              <button className="div1">-</button>
-                              <button className="div2">0</button>
-                              <button className="div3">+</button>
+                              <button className="div1"
+                              onClick={() => handleSubtractItem(product)}
+                              >-</button>
+                              <button className="div2">{product.quantity}</button>
+                              <button className="div3"
+                              onClick={() => handleAddItem(product)}
+                              >+</button>
                            </div>
                         </td>
-                        <td>$469.99</td>
+                        <td>{
+                           product.quantity * product.product.price
+                           }
+                           </td>
                      </tr>
                         ))
                      }

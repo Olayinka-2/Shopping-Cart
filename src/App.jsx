@@ -4,11 +4,12 @@ import { useState } from "react";
 
 export default function App() {
   const [cartItem, setCartItem] = useState([]);
+  const [data, setData] = useState([]);
 
   return (
     <>
       <Header cartItem={cartItem}/>
-      <Outlet context={{cartItem, setCartItem}}/>
+      <Outlet context={{cartItem, setCartItem, data, setData}}/>
     </>
   )
 }
