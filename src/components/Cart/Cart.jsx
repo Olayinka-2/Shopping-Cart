@@ -1,7 +1,9 @@
 import { useOutletContext } from "react-router-dom";
+import style from './cart.module.css';
 
 export default function Cart() {
    const {cartItem, setCartItem} = useOutletContext();
+   const emptyCart = cartItem.length;
 
    function handleAddItem(product) {
       const updatedCart = cartItem.map((item) =>
@@ -12,7 +14,7 @@ export default function Cart() {
          setCartItem(updatedCart);
    }
    function handleSubtractItem(product) {
-      if(product.quantity > 0) {
+      if(product.quantity > 1) {
          const updatedCart = cartItem.map((item) =>
             item.product.id === product.product.id
               ? { ...item, quantity: item.quantity - 1 } // Update quantity
@@ -24,10 +26,12 @@ export default function Cart() {
 
    return (
       <>
+      {
+         emptyCart > 0 ?
          <main>
-            <div className="cart-container">
-               <table className="table">
-                  <thead className="table-header">
+            <div className={style["cart-container"]}>
+               <table className={style["table"]}>
+                  <thead className={style["table-header"]}>
                      <tr>
                         <th>Item</th>
                         <th>Price</th>
@@ -40,19 +44,19 @@ export default function Cart() {
                         cartItem.map((product) => (
                      <tr key={product.product.id}>
                         <td>
-                           <div className="table-desc">
-                              <p className="first-para">{product.product.title}</p>
-                              <h3 className="second-para">Estimated Ship date: June 6th</h3>
+                           <div className={style["table-desc"]}>
+                              <p className={style["first-para"]}>{product.product.title}</p>
+                              <h3 className={style["second-para"]}>Estimated Ship date: June 6th</h3>
                            </div>
                         </td>
                         <td>{product.product.price}</td>
                         <td>
-                           <div className="amount-con">
-                              <button className="div1"
+                           <div className={style["amount-con"]}>
+                              <button className={style["div1"]}
                               onClick={() => handleSubtractItem(product)}
                               >-</button>
-                              <button className="div2">{product.quantity}</button>
-                              <button className="div3"
+                              <button className={style["div2"]}>{product.quantity}</button>
+                              <button className={style["div3"]}
                               onClick={() => handleAddItem(product)}
                               >+</button>
                            </div>
@@ -64,33 +68,14 @@ export default function Cart() {
                      </tr>
                         ))
                      }
-                     <tr>
-                        <td>
-                           <div className="table-desc">
-                              <p className="first-para">Pi Pizza Oven</p>
-                              <h3 className="second-para">Estimated Ship date: June 6th</h3>
-                           </div>
-                        </td>
-                        <td>$469.99</td>
-                        <td>
-                           <div className="amount-con">
-                              <button className="div1">-</button>
-                              <button className="div2">0</button>
-                              <button className="div3">+</button>
-                           </div>
-                        </td>
-                        <td>$469.99</td>
-                     </tr>
-                     <tr>
-                        <td>Solo Stove Grill Ultimate Bundle</td>
-                        <td>$549.99</td>
-                        <td>1</td>
-                        <td>$549.99</td>
-                     </tr>
                   </tbody>
                </table>
             </div>
-         </main>
+         </main> :
+         <div className={style["empty-cart"]}>
+            No item is in the Cart
+         </div>
+      }
       </>
    )
 }

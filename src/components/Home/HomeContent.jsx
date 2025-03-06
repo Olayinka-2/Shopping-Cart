@@ -17,7 +17,7 @@ export default function MainContent() {
                            Shop Now
                         </button>
                      </Link>
-                     <Link>
+                     <Link to="/cart">
                         <button>
                            Collection
                         </button>

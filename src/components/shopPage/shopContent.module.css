@@ -1,4 +1,6 @@
-
+   .hero-section {
+      padding-bottom: 3rem;
+   }
    .product-container {
       margin-top: 3rem;
       display: flex;

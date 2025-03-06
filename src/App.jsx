@@ -8,8 +8,10 @@ export default function App() {
 
   return (
     <>
+    <div className="body-container">
       <Header cartItem={cartItem}/>
       <Outlet context={{cartItem, setCartItem, data, setData}}/>
+    </div>
     </>
   )
 }
