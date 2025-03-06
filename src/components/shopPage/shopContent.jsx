@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import style from './shopContent.module.css';
+import { useOutletContext } from "react-router-dom";
 
 export default function ShopContent() {
    const [loading, setLoading] = useState(false);
    const [data, setData] = useState([]);
-
+   const {cartItem, setCartItem} = useOutletContext();
+   console.log(cartItem);
 
 
    function handleAddToCart(product) {
