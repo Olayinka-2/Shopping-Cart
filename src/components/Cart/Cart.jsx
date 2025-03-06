@@ -62,7 +62,7 @@ export default function Cart() {
                            </div>
                         </td>
                         <td>{
-                           product.quantity * product.product.price
+                           (product.quantity * product.product.price).toFixed(2)
                            }
                            </td>
                      </tr>
