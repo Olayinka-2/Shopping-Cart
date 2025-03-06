@@ -49,7 +49,7 @@ export default function ShopContent() {
       };
 
       fetchData();
-   }, []);
+   }, [ ]);
 
    return (
       <>

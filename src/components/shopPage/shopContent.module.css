@@ -61,12 +61,21 @@
    }
    
    .Add-to-cart-btn {
-      border: none;
+      border: 1px solid #DD3D55;
       color: #DD3D55;
       background-color: #fff;
       border-radius: .5rem;
       padding: .8rem 1.2rem;
       margin-top: auto;
+      cursor: pointer;
+      transition: 1s;
+      transition-property: hover;
+   }
+
+   .Add-to-cart-btn:hover {
+      color: #fff;
+      background-color: #DD3D55;
+      border: 1px solid #fff;
    }
 
    .loading-state {
