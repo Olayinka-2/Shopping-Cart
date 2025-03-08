@@ -3,6 +3,8 @@
       padding: 0 3rem;
       max-width: 100rem;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
    }
    
    .table {
@@ -71,4 +73,31 @@
       color: #000;
       text-align: center;
       margin-top: 10rem;
+   }
+
+   .product-sumation {
+      width: 50%;
+      align-self: flex-end;
+      margin-top: 1rem;
+   }
+
+   .product-sumation div {
+      font-size: 1.4rem;
+      padding: 1rem;
+      border-bottom: 1px solid gray;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   .product-sumation div p:first-child {
+      font-weight: bold;
+   }
+
+   .product-sumation div p:last-child {
+      font-weight: 100;
+   }
+
+   .product-sumation div:last-child p:last-child {
+      font-size: 1.8rem;
    }

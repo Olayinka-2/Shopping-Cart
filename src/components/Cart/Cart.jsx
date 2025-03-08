@@ -2,7 +2,7 @@ import { useOutletContext } from "react-router-dom";
 import style from './cart.module.css';
 
 export default function Cart() {
-   const {cartItem, setCartItem} = useOutletContext();
+   const {cartItem, setCartItem, SubTotal, tax} = useOutletContext();
    const emptyCart = cartItem.length;
 
    function handleAddItem(product) {
@@ -13,6 +13,8 @@ export default function Cart() {
          );
          setCartItem(updatedCart);
    }
+
+   console.log(SubTotal);
    function handleSubtractItem(product) {
       if(product.quantity > 1) {
          const updatedCart = cartItem.map((item) =>
@@ -70,6 +72,20 @@ export default function Cart() {
                      }
                   </tbody>
                </table>
+               <section className={style["product-sumation"]}>
+                  <div className="subtotal">
+                     <p>Subtotal: </p>
+                     <p>${SubTotal}</p>
+                  </div>
+                  <div className="sales-tax">
+                     <p>Tax: </p>
+                     <p>4%</p>
+                  </div>
+                  <div className="grand-total">
+                     <p>Grand total: </p>
+                     <p>${Math.ceil(SubTotal + tax)}</p>
+                  </div>
+               </section>
             </div>
          </main> :
          <div className={style["empty-cart"]}>

@@ -4,8 +4,7 @@ import { useOutletContext } from "react-router-dom";
 
 export default function ShopContent() {
    const [loading, setLoading] = useState(false);
-   const {cartItem, setCartItem, data, setData} = useOutletContext();
-   console.log(cartItem);
+   const {cartItem, setCartItem, data, setData, SubTotal} = useOutletContext();
 
    function handleAddToCart(product) {
       const existingObject = cartItem.find((item) => item.product.id === product.id);
@@ -28,6 +27,7 @@ export default function ShopContent() {
    }
 
    console.log(cartItem);
+   console.log(SubTotal)
 
    useEffect(() => {
       const fetchData = async () => {
