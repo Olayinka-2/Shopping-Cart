@@ -36,6 +36,11 @@ nav {
 
 nav h2 {
   color: #DD3D55;
+  text-decoration: none;
+}
+
+nav .Link {
+  text-decoration: none;
 }
 
 .middle-navLink {

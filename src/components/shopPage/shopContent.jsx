@@ -5,7 +5,7 @@ import { useOutletContext } from "react-router-dom";
 export default function ShopContent() {
    const [loading, setLoading] = useState(false);
    const {cartItem, setCartItem, data, setData, SubTotal} = useOutletContext();
-
+   const [errorState, setErrorState] = useState(false);
    function handleAddToCart(product) {
       const existingObject = cartItem.find((item) => item.product.id === product.id);
 
@@ -42,7 +42,8 @@ export default function ShopContent() {
             const result = await response.json();
             setData(result);
          } catch (error) {
-            console.error('Error fetching data:', error)
+            console.error('Error fetching data:', error);
+            setErrorState(true);
          } finally {
             setLoading(false);
          }
@@ -61,7 +62,8 @@ export default function ShopContent() {
                <div className={style["product-container"]}>
                   <div className={style["products"]}>
                   {
-                     loading ? <div className={style["loading-state"]}>Loading...</div> :
+                     loading ? <div className={style["loading-state"]}> Loading...</div> :
+                     errorState ? <div className={style["loading-state"]}>Can&apos;t fetch data from the site</div> :
                      data.map((product) => (
                         <div className={style["product-card"]} key={product.id}>
                      <div className={style["product-image"]}>

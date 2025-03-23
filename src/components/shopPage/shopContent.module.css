@@ -12,6 +12,7 @@
       max-width: 1000px;
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 2rem;
    }
    .product-header {

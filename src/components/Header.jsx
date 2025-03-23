@@ -10,9 +10,13 @@ export default function Header() {
    return (
          <header>
             <nav>
-               <h2>
+               
+                  <Link to="/" className="Link">
+                  <h2>
                   Light Shop
-               </h2>
+                  </h2>
+                  </Link>
+               
                <div className="middle-navLink">
                   <Link to="/" className={`navLink ${homeIsActive}`}
                   >Home</Link>
